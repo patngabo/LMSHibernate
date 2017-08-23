@@ -1,0 +1,43 @@
+<div ng-controller="authorsCtrl">
+	<div class="page-header">
+		<h3>Authors</h3>
+		&nbsp; <a href="javascript:showAddAuthor();"><button type="button"
+				class="btn btn-sm btn-primary">Add new Author</button></a>
+
+	</div>
+	<div id="addNewAuthor" style="display: none">
+		<form method="post" name="addAuthorFrm">
+			Author Name<input type="text" required 
+							ng-model="authorName"/><br />
+			<input type="button" ng-click="addAuthor()"
+				value="submit" />
+		</form>
+	</div>
+
+	<div class="row">
+		<div class="col-md-6">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>#</th>
+						<th>Author name</th>
+						<th>Update</th>
+						<th>Delete</th>
+					</tr>
+				</thead>
+				<tbody id="authorList">
+					<tr ng-repeat="author in authors">
+						<td>{{author.authorId}}</td>
+						<td>{{author.authorName}}</td>
+						<td>
+							<button type="button" class="btn btn-sm btn-success">Update</button>
+						</td>
+						<td>
+							<button type="button" class="btn btn-sm btn-warning">Delete</button>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
